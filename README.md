@@ -60,3 +60,9 @@
     Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
     
     Next i
+
+# Summary
+## Refactoring the code Pros & Cons
+### Refactoring the code help to clean up the data, especially if it's going to be reused. Save on space on the CPU, decrease run times for the user to quickley gather the information needed. Some disadvantages may inlude, enormouse files, or not having the right apps or programs to run the refactored code. 
+## Advantage of refactoring the Stock Analysis code
+### For it's purpose, consumers of the information can generate the data quicker & cleaner. Updating the tickers on the stocks you want to analyze will pull the same content without having to repurpose the code from scratch, although this could be done from the original code, small tweaks to existing code will save consumers of the code a ton of time.
