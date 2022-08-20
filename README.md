@@ -7,26 +7,27 @@
 ### The data presented was based on 12 stock tickers that were being considered over the 2017 & 2018 years. Data used in the sheet looked at the value of each ticker, date issued, highest & lowest price points, opening & closing prices, & volume of the tickers.
 # Results
 ## Analysis
-### I began refoacoting the code, first by copying the code needed to build on and add revised code
+### I began refoacoting the code, first by copying the code needed to build on, and add revised the code to be able to pull the relevant data including, input box, chart headers, ticker arrays. 
+### I've inluded the instruction code that has been provided & written in the file.
 
-'1a) Create a ticker Index
-tickerIndex = 0
+    '1a) Create a ticker Index
+    tickerIndex = 0
 
-'1b) Create three output arrays
-Dim tickerVolumes(12) As Long
-Dim tickerStartingPrices(12) As Single
-Dim tickerEndingPrices(12) As Single
+    '1b) Create three output arrays
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
 
-''2a) Create a for loop to initialize the tickerVolumes to zero.
-' If the next row’s ticker doesn’t match, increase the tickerIndex.
-For i = 0 To 11
+    '2a) Create a for loop to initialize the tickerVolumes to zero.
+    ' If the next row’s ticker doesn’t match, increase the tickerIndex.
+    For i = 0 To 11
     tickerVolumes(i) = 0
     tickerStartingPrices(i) = 0
     tickerEndingPrices(i) = 0
-Next i
+    Next i
 
-''2b) Loop over all the rows in the spreadsheet.
-For i = 2 To RowCount
+    '2b) Loop over all the rows in the spreadsheet.
+    For i = 2 To RowCount
 
     '3a) Increase volume for current ticker
     tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
@@ -48,14 +49,14 @@ For i = 2 To RowCount
             tickerIndex = tickerIndex + 1
         End If
 
-Next i
+    Next i
 
-'4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return.
-For i = 0 To 11
+    '4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return.
+    For i = 0 To 11
     
     Worksheets("All Stocks Analysis").Activate
     Cells(4 + i, 1).Value = tickers(i)
     Cells(4 + i, 2).Value = tickerVolumes(i)
     Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
     
-Next i
+    Next i
